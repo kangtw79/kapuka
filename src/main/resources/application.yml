@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: kapuka
+  profiles:
+    active: local
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+openapi:
+  kakao.host: https://dapi.kakao.com
+  kakao.key: c2f2720636295d3c9d20dbd3db9c6013
+  naver.host: https://openapi.naver.com
+  naver.id: UxaZdgZ8EOFT2HdKCEQn
+  naver.secret: T7Ozhe689Q
+
+#local
+---
+spring:
+  profiles: local
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+feign:
+  httpclient.enabled: true
+  hystrix.enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 10000

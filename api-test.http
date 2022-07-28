@@ -1,0 +1,7 @@
+### Send POST request with json body
+GET http://localhost:8080/v1/place/search?keyword=곱창
+Content-Type: application/json
+
+### Send POST request with json body
+GET http://localhost:8080/v1/keyword/top-ranks
+Content-Type: application/json
